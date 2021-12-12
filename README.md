@@ -32,6 +32,8 @@ You will need two wallet addresses (sender and receiver) and a private key for t
 
 - Clone this repository `git clone <git_url>`
 
+- Use the `nvm` version by running `nvm use` in project root. Required: `v12`
+
 - Install dependencies `yarn` or `npm install`
 
 - Now to add your signing key and receiver address create `src/config/secrets.ts`. Below is the `interface` for the secrets file.
