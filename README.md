@@ -8,6 +8,8 @@ It is currently connected to and using the [Hangzhou Testnet](https://hangzhoune
 
 Thanks to the people at DeSpace Berlin, in person and in the Discord for helping this project get started.
 
+This project is released under the GNU GPL. So please follow the GNU GPL guidelines when contributing or working on it.
+
 <p align="center">
  <img
  width={80}
@@ -19,6 +21,12 @@ Thanks to the people at DeSpace Berlin, in person and in the Discord for helping
 ---
 
 <h2 align="center">Running the Project</h2>
+
+To setup the wallets with test Tezos, check out the [Faucets](https://teztnets.xyz/hangzhounet-faucet) on the Hangzhou net.
+
+The [tezos-client](https://assets.tqtezos.com/docs/setup/1-tezos-client/) can be used to setup wallets needed for testing.
+
+You will also need a wallet for your Tezos, such as [Temple](https://templewallet.com/) or [Spire](https://chrome.google.com/webstore/detail/spire/gpfndedineagiepkpinficbcbbgjoenn)
 
 You will need two wallet addresses (sender and receiver) and a private key for the sending wallet on the network you wish to use this application with.
 
