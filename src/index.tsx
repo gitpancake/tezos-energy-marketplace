@@ -1,14 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Routing from './Routes';
 import reportWebVitals from './reportWebVitals';
+import 'semantic-ui-css/semantic.min.css';
+import { BrowserRouter } from 'react-router-dom';
+import LoginContextProvider from './context/Login';
+import TezosContextProvider from './context/Tezos';
+import EnergyContextProvider from './context/Energy';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+	<React.StrictMode>
+		<BrowserRouter>
+			<LoginContextProvider>
+				<TezosContextProvider>
+					<EnergyContextProvider>
+						<Routing />
+					</EnergyContextProvider>
+				</TezosContextProvider>
+			</LoginContextProvider>
+		</BrowserRouter>
+	</React.StrictMode>,
+	document.getElementById('root'),
 );
 
 // If you want to start measuring performance in your app, pass a function
