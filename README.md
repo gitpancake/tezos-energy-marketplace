@@ -2,7 +2,7 @@
 
 This project has been created as a proof of concept, specifically for the [despace.berlin](https://www.despace.berlin/) Tezos Hackathon
 
-This project was created thank you to the TypeScript Library [Taquito](https://tezostaquito.io/docs/quick_start).
+This project was created using the TypeScript Library [Taquito](https://tezostaquito.io/docs/quick_start).
 
 It is currently connected to and using the [Hangzhou Testnet](https://hangzhounet.tzkt.io/).
 
