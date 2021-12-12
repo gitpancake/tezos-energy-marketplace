@@ -32,7 +32,7 @@ You will need two wallet addresses (sender and receiver) and a private key for t
 
 - Clone this repository `git clone <git_url>`
 
-- Use the `nvm` version by running `nvm use` in project root. Required: `v12`
+- Use the `nvm` version by running `nvm use` in project root. Required: `v16`
 
 - Install dependencies `yarn` or `npm install`
 
