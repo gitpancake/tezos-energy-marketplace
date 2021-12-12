@@ -1,5 +1,6 @@
 import { TezosToolkit, TransactionWalletOperation } from '@taquito/taquito';
 import { InMemorySigner } from '@taquito/signer';
+import secrets from '../config/secrets';
 
 export interface ITaqutioService {
 	setWallet(walletAddress: string): string;
@@ -13,14 +14,12 @@ export interface ITaqutioService {
 
 export class TaquitoService implements ITaqutioService {
 	private tezosInstance: TezosToolkit;
-	private walletAddress: string = 'tz1i9dVrmewtm4eE6pLfpCPD1y7FSuwSJphX';
+	private walletAddress: string = secrets.senderAddress || '';
 
 	constructor(netAddress: string) {
 		this.tezosInstance = new TezosToolkit(netAddress);
 
-		const signer = new InMemorySigner(
-			'edskS29hNzGCbSxMLd828dCUNZpGoihZZrf3HVFcXKF98KK8ib5YZ6rdUDfEB9sGdQDL5rn2qVh4VtzMNTcf2b9wf9h9GHk1E5',
-		);
+		const signer = new InMemorySigner(secrets.signingKey);
 		this.tezosInstance.setProvider({ rpc: netAddress, signer });
 	}
 

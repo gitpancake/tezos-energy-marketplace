@@ -4,14 +4,14 @@ interface Props {
 	children: React.ReactElement;
 }
 
-type LoginContextType = {
+interface ILoginContext {
 	loggedIn: boolean;
 	setLoggedIn: (newState: boolean) => void;
 	energyCompanyName: string;
 	setEnergyCompanyName: (name: string) => void;
-};
+}
 
-export const LoginContext = React.createContext<LoginContextType>({
+export const LoginContext = React.createContext<ILoginContext>({
 	loggedIn: false,
 	setLoggedIn: () => {},
 	energyCompanyName: '',

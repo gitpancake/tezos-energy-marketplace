@@ -6,7 +6,7 @@ interface Props {
 	children: React.ReactElement;
 }
 
-interface EnergyServiceContext {
+interface IEnergyServiceContext {
 	EnergyProducer: IEnergyService;
 	producers: Producer[];
 	addProducer: (producer: Producer) => void;
@@ -14,7 +14,7 @@ interface EnergyServiceContext {
 
 const EnergyProducer = new EnergyService(0);
 
-export const EnergyContext = React.createContext<EnergyServiceContext>({
+export const EnergyContext = React.createContext<IEnergyServiceContext>({
 	EnergyProducer,
 	producers: EnergyProducer.getProducers(),
 	addProducer: (producer: Producer) => EnergyProducer.addProducer(producer),

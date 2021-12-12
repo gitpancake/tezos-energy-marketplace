@@ -14,8 +14,8 @@ function App() {
 
 	const login = () => {
 		if (
-			username === 'admin' &&
-			password === 'admin' &&
+			username === 'tezos' &&
+			password === 'stake' &&
 			walletAddress &&
 			energyCompanyName
 		) {

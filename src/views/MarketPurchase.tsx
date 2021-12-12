@@ -1,6 +1,7 @@
 import React from 'react';
 import toast from 'react-hot-toast';
 import { Dimmer, Button, Card, Grid, Loader } from 'semantic-ui-react';
+import secrets from '../config/secrets';
 import { EnergyContext } from '../context/Energy';
 import { TezosContext } from '../context/Tezos';
 import { saleItems } from '../data/index';
@@ -10,9 +11,7 @@ const MarketPurchase = () => {
 	const { makeTransfer } = React.useContext(TezosContext);
 	const { EnergyProducer } = React.useContext(EnergyContext);
 	const [isLoading, setIsLoading] = React.useState<boolean>(false);
-	const [receivingAddress] = React.useState<string>(
-		'tz1aSkwEot3L2kmUvcoxzjMomb9mvBNuzFK6',
-	);
+	const [receivingAddress] = React.useState<string>(secrets.receiverAddress);
 
 	const buyEnergy = (energyAmount: number, tezosPrice: number) => {
 		setIsLoading(true);
