@@ -4,10 +4,9 @@ import { Producer, ProductionType } from '../data/producer';
 export interface IEnergyService {
 	getProducedEnergy: () => number;
 	incrementProducedEnergy: (increment?: number) => number;
-	addMeansOfProduction: (numMeans: number) => number;
-	getMeansOfProduction: () => number;
 	addProducer: (producer: Producer) => Producer[];
 	getProducers: () => Producer[];
+	deductProducedEnergy: (energy: number) => number;
 }
 
 const getAggregatedProductionRate = (producers: Producer[]): number => {
@@ -22,7 +21,7 @@ const getAggregatedProductionRate = (producers: Producer[]): number => {
 
 export class EnergyService implements IEnergyService {
 	private producedEnergy: number;
-	private meansOfProduction: number = 1;
+
 	private producers: Producer[] = [
 		{
 			type: ProductionType.Wind,
@@ -61,13 +60,9 @@ export class EnergyService implements IEnergyService {
 		return this.producers;
 	}
 
-	addMeansOfProduction(numMeans: number): number {
-		this.meansOfProduction += numMeans;
+	deductProducedEnergy(energy: number): number {
+		this.producedEnergy -= energy;
 
-		return this.meansOfProduction;
-	}
-
-	getMeansOfProduction(): number {
-		return this.meansOfProduction;
+		return this.producedEnergy;
 	}
 }

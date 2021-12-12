@@ -1,4 +1,5 @@
 import React from 'react';
+import { GAME_TICK } from '../../config/constants';
 import { TezosContext } from '../../context/Tezos';
 import { FormatToLocaleString } from '../../utils/numbers';
 
@@ -19,12 +20,12 @@ const Balance = () => {
 
 		const balanceInterval = setInterval(() => {
 			fetchWalletBalance();
-		}, 10000);
+		}, GAME_TICK);
 
 		return () => {
 			clearInterval(balanceInterval);
 		};
-	});
+	}, [walletBalance, setWalletBalance, getWalletBalance]);
 
 	const formattedWalletBalance = () => {
 		if (!walletBalance) {

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Grid, Menu } from 'semantic-ui-react';
-import Market from './views/Market';
 import Production from './views/Producers';
 import Balance from './components/Balance';
 import EnergyBalance from './components/Energy';
@@ -8,7 +7,9 @@ import NumProductionMeans from './components/MeansOfProduction';
 import BaseRateTab from './components/BaseRate';
 import { LoginContext } from './context/Login';
 import ProducerPurchase from './views/PurchaseProducer';
+import MarketPurchase from './views/MarketPurchase';
 import { EnergyContext } from './context/Energy';
+import SaleForm from './components/SaleForm';
 
 const Game = () => {
 	const { energyCompanyName } = React.useContext(LoginContext);
@@ -53,13 +54,13 @@ const Game = () => {
 			<Grid centered columns={2}>
 				<Grid.Row>
 					<Grid.Column width={'8'}>
-						{activeItem === 'Market' && <Market />}
+						{activeItem === 'Market' && <SaleForm />}
 						{activeItem === 'Your Production' && (
 							<Production producers={producers} />
 						)}
 					</Grid.Column>
 					<Grid.Column width={'4'}>
-						{activeItem === 'Market' && <Market />}
+						{activeItem === 'Market' && <MarketPurchase />}
 						{activeItem === 'Your Production' && <ProducerPurchase />}
 					</Grid.Column>
 				</Grid.Row>

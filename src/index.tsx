@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Toaster } from 'react-hot-toast';
 import './index.css';
 import Routing from './Routes';
 import reportWebVitals from './reportWebVitals';
@@ -15,7 +16,10 @@ ReactDOM.render(
 			<LoginContextProvider>
 				<TezosContextProvider>
 					<EnergyContextProvider>
-						<Routing />
+						<>
+							<Toaster />
+							<Routing />
+						</>
 					</EnergyContextProvider>
 				</TezosContextProvider>
 			</LoginContextProvider>
