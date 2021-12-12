@@ -19,9 +19,8 @@ export const LoginContext = React.createContext<LoginContextType>({
 });
 
 const LoginContextProvider = ({ children }: Props) => {
-	const [loggedIn, setLoggedIn] = React.useState<boolean>(true);
-	const [energyCompanyName, setEnergyCompanyName] =
-		React.useState<string>('Big Beans Energy');
+	const [loggedIn, setLoggedIn] = React.useState<boolean>(false);
+	const [energyCompanyName, setEnergyCompanyName] = React.useState<string>('');
 
 	return (
 		<LoginContext.Provider

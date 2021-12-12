@@ -3,6 +3,7 @@ import { InMemorySigner } from '@taquito/signer';
 
 export interface ITaqutioService {
 	setWallet(walletAddress: string): string;
+	getWallet(): string;
 	getWalletBalance(): Promise<number>;
 	makeTransfer(
 		receiverAddress: string,
@@ -26,6 +27,10 @@ export class TaquitoService implements ITaqutioService {
 	setWallet(walletAddress: string): string {
 		this.walletAddress = walletAddress;
 
+		return this.walletAddress;
+	}
+
+	getWallet(): string {
 		return this.walletAddress;
 	}
 

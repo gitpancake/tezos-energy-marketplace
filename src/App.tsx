@@ -6,10 +6,10 @@ import { TezosContext } from './context/Tezos';
 
 function App() {
 	const { setLoggedIn } = React.useContext(LoginContext);
-	const { setWallet } = React.useContext(TezosContext);
+	const { setWallet, getWallet } = React.useContext(TezosContext);
 	const [username, setUsername] = React.useState<string>('');
 	const [password, setPassword] = React.useState<string>('');
-	const [walletAddress, setWalletAddress] = React.useState<string>('');
+	const [walletAddress, setWalletAddress] = React.useState<string>(getWallet());
 	const [energyCompanyName, setEnergyCompanyName] = React.useState<string>('');
 
 	const login = () => {
@@ -32,6 +32,7 @@ function App() {
 					<Card raised>
 						<div className="login-box">
 							<h1>The Energy Game</h1>
+							<p>Currently on the Hangzhou Testnet</p>
 							<Form onSubmit={() => login()}>
 								<Form.Field>
 									<input

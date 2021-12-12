@@ -9,6 +9,7 @@ const Taquito = new TaquitoService('https://rpc.hangzhounet.teztnets.xyz');
 
 export const TezosContext = React.createContext<ITaqutioService>({
 	setWallet: (walletAddress: string) => Taquito.setWallet(walletAddress),
+	getWallet: () => Taquito.getWallet(),
 	getWalletBalance: () => Taquito.getWalletBalance(),
 	makeTransfer: (address: string, amount: number) =>
 		Taquito.makeTransfer(address, amount),
@@ -19,6 +20,7 @@ const TezosContextProvider = ({ children }: Props) => {
 		<TezosContext.Provider
 			value={{
 				setWallet: (walletAddress: string) => Taquito.setWallet(walletAddress),
+				getWallet: () => Taquito.getWallet(),
 				getWalletBalance: () => Taquito.getWalletBalance(),
 				makeTransfer: (address: string, amount: number) =>
 					Taquito.makeTransfer(address, amount),

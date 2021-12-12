@@ -10,6 +10,7 @@ import ProducerPurchase from './views/PurchaseProducer';
 import MarketPurchase from './views/MarketPurchase';
 import { EnergyContext } from './context/Energy';
 import SaleForm from './components/SaleForm';
+import Introduction from './views/Introduction';
 
 const Game = () => {
 	const { energyCompanyName } = React.useContext(LoginContext);
@@ -19,13 +20,18 @@ const Game = () => {
 		setActiveItem(name);
 
 	const [activeItem, setActiveItem] = React.useState<string | undefined>(
-		'Market',
+		'Introduction',
 	);
 
 	return (
 		<div>
 			<Menu pointing>
 				<Menu.Item>{energyCompanyName}</Menu.Item>
+				<Menu.Item
+					name="Introduction"
+					active={activeItem === 'Introduction'}
+					onClick={handleItemClick}
+				/>
 				<Menu.Item
 					name="Your Production"
 					active={activeItem === 'Your Production'}
@@ -53,7 +59,8 @@ const Game = () => {
 			</Menu>
 			<Grid centered columns={2}>
 				<Grid.Row>
-					<Grid.Column width={'8'}>
+					<Grid.Column width={activeItem === 'Introduction' ? '10' : '8'}>
+						{activeItem === 'Introduction' && <Introduction />}
 						{activeItem === 'Market' && <SaleForm />}
 						{activeItem === 'Your Production' && (
 							<Production producers={producers} />
