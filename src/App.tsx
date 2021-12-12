@@ -5,12 +5,12 @@ import './App.css';
 import { TezosContext } from './context/Tezos';
 
 function App() {
-	const { setLoggedIn } = React.useContext(LoginContext);
+	const { setLoggedIn, setEnergyCompanyName } = React.useContext(LoginContext);
 	const { setWallet, getWallet } = React.useContext(TezosContext);
 	const [username, setUsername] = React.useState<string>('');
 	const [password, setPassword] = React.useState<string>('');
 	const [walletAddress, setWalletAddress] = React.useState<string>(getWallet());
-	const [energyCompanyName, setEnergyCompanyName] = React.useState<string>('');
+	const [energyCompanyName, setCompanyName] = React.useState<string>('');
 
 	const login = () => {
 		if (
@@ -21,6 +21,7 @@ function App() {
 		) {
 			setLoggedIn(true);
 			setWallet(walletAddress);
+			setEnergyCompanyName(energyCompanyName);
 		}
 	};
 
@@ -53,7 +54,7 @@ function App() {
 									<input
 										placeholder="Energy Company Name"
 										value={energyCompanyName}
-										onChange={(e) => setEnergyCompanyName(e.target.value)}
+										onChange={(e) => setCompanyName(e.target.value)}
 									/>
 								</Form.Field>
 								<Form.Field>
