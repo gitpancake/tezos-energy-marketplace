@@ -1,11 +1,12 @@
 import React from 'react';
+import { NETWORK_URL } from '../config/constants';
 import { ITaqutioService, TaquitoService } from '../services/taquito';
 
 interface Props {
 	children: React.ReactElement;
 }
 
-const Taquito = new TaquitoService('https://rpc.hangzhounet.teztnets.xyz');
+const Taquito = new TaquitoService(NETWORK_URL);
 
 export const TezosContext = React.createContext<ITaqutioService>({
 	setWallet: (walletAddress: string) => Taquito.setWallet(walletAddress),
