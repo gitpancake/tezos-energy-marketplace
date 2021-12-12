@@ -20,9 +20,11 @@ const Introduction = () => (
 						calculate their energy production:
 					</p>
 					<code>(BASE_PRODUCTION_RATE * TOTAL_PRODUCER_PRODUCTION_RATE)</code>
+					<br />
+					<br />
 					<p>
-						You can also see your total energy producer and your Tezos walelt
-						balance in the menu bar
+						You can see your total energy producer and your Tezos walelt balance
+						in the menu bar
 					</p>
 					<h3>Production</h3>
 					<p>
